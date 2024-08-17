@@ -39,14 +39,14 @@ class Match:
         tasks_total = self.score1 + self.score2
         time_avg = ((self.t1_t + self.t2_t) / tasks_total)
         if round(time_avg, 1) > 100:
-            print(f'Сегодня было решено: {tasks_total}, в среднем по {round(time_avg, 1) / 60} минут на задачу')
+            print('Сегодня было решено: %(tasks_total)s, в среднем по %(times)s минут на задачу' % {'tasks_total': tasks_total, 'times': round(time_avg, 1) / 60})
         else:
-            print(f'Сегодня было решено: {tasks_total}, в среднем по {round(time_avg, 1)} секунд на задачу')
+            print('Сегодня было решено: {}, в среднем по {} секунд на задачу'.format(tasks_total, round(time_avg, 1)))
 
 
 
 
-match1 = Match(2, {'Мастера кода': 5}, {'Волшебники данных': 6}, 39, 42, 1261, 2523)
+match1 = Match(2, {'Мастера кода': 5}, {'Волшебники данных': 6}, 40, 40, 1261, 2523)
 
 match1.prt_count_t()
 match1.t_score()
